@@ -49,6 +49,14 @@ app.layout = html.Div(children=[
         marks={str(n+1): str(n+1) for n in range(10)}
     ),
 
+    html.Label("Starting number", htmlFor="input-num-start"),
+    dcc.Input(
+        id="input-num-start",
+        min=1,
+        value=100,
+        type="number",
+    ),
+
     html.Div(children="", id="text-selected-country"),
 
 ])
@@ -83,10 +91,14 @@ def update_text_selected_country(country=None, state=None):
     Output('graph-doubling-days', 'figure'),
     [Input('input-country', 'value'),
      Input('input-state', 'value'),
+     Input('input-num-start', 'value'),
      Input('input-averaged-days', 'value')])
-def update_graph(country, state, averaged_days):
+def update_graph(country, state, num_start, averaged_days):
     global data
-    return figure_cumulative_doubling.fig_for_location(data, country, state, averaged_days=averaged_days)
+    parameters = {}
+    if num_start:
+        parameters['num_start'] = num_start
+    return figure_cumulative_doubling.fig_for_location(data, country, state, averaged_days=averaged_days, **parameters)
 
 
 if __name__ == '__main__':
