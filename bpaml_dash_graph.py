@@ -44,11 +44,6 @@ app.layout = html.Div(children=[
 
 ])
 
-# - figure_cumulative_doubling has been provided from meetup053
-# - add a dash_core_components Graph object with id="graph-doubling-days" and a figure=fig_for_location(data=data)
-# - define a function update_graph(country, state) which returns a figure based on selected country and state
-# - Use the @app.callback decorator to call the function when "value" of "input-country" or "input-state" changes
-
 
 @app.callback(
     Output('input-state', 'options'),
