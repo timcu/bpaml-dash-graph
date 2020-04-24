@@ -101,3 +101,15 @@ Task 8: Provide a callback for Starting Number
 - modify update_graph to take an additional argument num_start
 - if num_start is blank then use default value in fig_for_location function
 - Commit your changes to your own branch and checkout task9
+
+
+Task 9: Provide a callbacks for Case Type and Graph Type
+- add dash_core_components RadioItems for id="input-case-type" and id="input-yaxes-type"
+- default case-type is "confirmed", default yaxes-type is "log"
+- options for case_type [{"label": "confirmed", "value": "confirmed"}, ] for confirmed, recovered, deaths
+- options for yaxes-type are linear or log
+- labelStyle={"display": "inline-block"}
+- Divide input fields into 3 divs with style={"breakInside": "avoid"}, all inside one div with style={"columnCount": 3}
+- Commit your changes to your own branch and checkout master to see final solution
+    git checkout master
+
