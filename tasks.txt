@@ -63,3 +63,17 @@ Task 4: Use callbacks on Dropdown menu to change text in div.
     git checkout task5
 
 
+Task 5: Use selected country to filter Dropdown for state
+- Create an html.Label with the text "State/Province"
+- Create a dash_core_components Dropdown with
+    id="input-state",
+    value="" (initial selection),
+    options= list of dictionaries for the states [{"label": state, "value": state}, ...]
+- Use the @app.callback decorator to call a function when "value" of "input-country" changes
+  and stores result in "options" of "input-state"
+- Also change update_text_selected_country() to take two input values. Use function location_name in utilities.py
+- define a function in utilities.py called location_name(country=None, state=None) which returns location name
+- Commit your changes to your own branch and checkout task6
+    git checkout -b mytask5attempt
+    git commit -a -m "my task 5 solution"
+    git checkout task6
