@@ -40,6 +40,15 @@ app.layout = html.Div(children=[
         options=[],
     ),
 
+    html.Label("Averaged days", htmlFor="input-averaged-days"),
+    dcc.Slider(
+        id="input-averaged-days",
+        min=1,
+        max=10,
+        value=5,
+        marks={str(n+1): str(n+1) for n in range(10)}
+    ),
+
     html.Div(children="", id="text-selected-country"),
 
 ])
@@ -78,10 +87,11 @@ def update_text_selected_country(country=None, state=None):
 @app.callback(
     Output('graph-doubling-days', 'figure'),
     [Input('input-country', 'value'),
-     Input('input-state', 'value')])
-def update_graph(country=None, state=None):
+     Input('input-state', 'value'),
+     Input('input-averaged-days', 'value')])
+def update_graph(country, state, averaged_days):
     global data
-    return figure_cumulative_doubling.fig_for_location(data, country, state)
+    return figure_cumulative_doubling.fig_for_location(data, country, state, averaged_days=averaged_days)
 
 
 if __name__ == '__main__':
