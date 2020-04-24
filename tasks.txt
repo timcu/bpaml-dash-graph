@@ -31,12 +31,12 @@ Task 2: First dash application
 
 
 Task 3: Dropdown menu for list of countries
-- code from meetup053 has been added into a class in data_cache.py. Initialise using:
+- Code from meetup053 has been added into a class in data_cache.py. Initialise using:
     import data_cache
     data = data_cache.DataCache()
-- get DataFrame from DataCache.df_for_case_type()
-- get all unique countries from column "Country/Region" in DataFrame
-- sort the countries in place
+- Get DataFrame from DataCache.df_for_case_type()
+- Get all unique countries from column "Country/Region" in DataFrame
+- Sort the countries in place
 - Create an html.Label with the text "Country"
 - Create a dash_core_components Dropdown with
     id="input-country",
@@ -44,8 +44,22 @@ Task 3: Dropdown menu for list of countries
     options= list of dictionaries for the countries. "label" is what is shown, "value" is what is returned to app
         [{"label": "Australia", "value": "Australia"}, {"label": "New Zealand", "value": "New Zealand"}]
 - Create a branch to commit your changes
-    git checkout -b mytask3attempt              # -b creates a branch. GUI: VCS > Git > Branches... > New Branch
-    git commit -a -m "my task 3 solution"       # -a adds all changes before commit. GUI: Click tick in GUI
+    git checkout -b mytask3attempt
+    git commit -a -m "my task 3 solution"
 - Checkout task 4 and compare differences
-    git checkout task4                          # check out tag called task3
-    git diff task3 task4                        # show what has changed between task2 and task3. GUI: Log
+    git checkout task4
+    git diff task3 task4
+
+
+Task 4: Use callbacks on Dropdown menu to change text in div.
+- See https://dash.plotly.com/basic-callbacks
+- Create a html.Div with the initial text empty and an id of "text-selected-country"
+- Create a function which takes the country name and returns "You have selected {country}"
+- Use the @app.callback decorator to call the function when "value" of "input-country" changes
+  and stores result in "children" of "text-selected-country"
+- Commit your changes to your own branch and checkout task5
+    git checkout -b mytask4attempt
+    git commit -a -m "my task 4 solution"
+    git checkout task5
+
+
