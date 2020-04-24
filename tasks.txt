@@ -94,3 +94,10 @@ Task 7: Provide an input and a callback for Averaged Days select between 1 and 1
 - add a dash_core_components Slider object with id="input-averaged-days", min, max, value, marks {"1":"1", "2":"2", ...}
 - modify update_graph to take an additional argument averaged_days
 - Commit your changes to your own branch and checkout task8
+
+
+Task 8: Provide a callback for Starting Number
+- add a dash_core_components Input object with id="input-num-start", min, value="100", type="number"
+- modify update_graph to take an additional argument num_start
+- if num_start is blank then use default value in fig_for_location function
+- Commit your changes to your own branch and checkout task9
