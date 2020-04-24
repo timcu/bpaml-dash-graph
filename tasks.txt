@@ -88,3 +88,9 @@ Task 6: Draw covid days doubling chart based on selected country and state
     git checkout -b mytask6attempt
     git commit -a -m "my task 6 solution"
     git checkout task7
+
+
+Task 7: Provide an input and a callback for Averaged Days select between 1 and 10
+- add a dash_core_components Slider object with id="input-averaged-days", min, max, value, marks {"1":"1", "2":"2", ...}
+- modify update_graph to take an additional argument averaged_days
+- Commit your changes to your own branch and checkout task8
