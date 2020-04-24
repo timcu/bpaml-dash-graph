@@ -77,3 +77,14 @@ Task 5: Use selected country to filter Dropdown for state
     git checkout -b mytask5attempt
     git commit -a -m "my task 5 solution"
     git checkout task6
+
+
+Task 6: Draw covid days doubling chart based on selected country and state
+- figure_cumulative_doubling has been provided from meetup053
+- add a dash_core_components Graph object with id="graph-doubling-days" and a figure=fig_for_location(data=data)
+- define a function update_graph(country, state) which returns a figure based on selected country and state
+- Use the @app.callback decorator to call the function when "value" of "input-country" or "input-state" changes
+- Commit your changes to your own branch and checkout task7
+    git checkout -b mytask6attempt
+    git commit -a -m "my task 6 solution"
+    git checkout task7

@@ -42,8 +42,8 @@ app.layout = html.Div(children=[
 
 
 @app.callback(
-    dash.dependencies.Output('input-state', 'options'),
-    [dash.dependencies.Input('input-country', 'value')])
+    Output('input-state', 'options'),
+    [Input('input-country', 'value')])
 def update_ar_state(country):
     global data
     if country:
