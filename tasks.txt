@@ -15,4 +15,4 @@ Task 1: Setup environment
 - Install Git from https://git-scm.com/download/
 - Install IDE eg PyCharm Community Edition 2020.3.3 from https://www.jetbrains.com/pycharm/download/
 - Clone repository and setup virtual environment (see readme1.md)
-- git checkout challenge2  # VCS > Git > Branches... > Checkout tag or revision > challenge2
+- git checkout challenge2  # Git > Branches... > Checkout tag or revision > challenge2
