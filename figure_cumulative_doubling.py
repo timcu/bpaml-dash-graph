@@ -3,6 +3,8 @@ import numpy as np
 import plotly
 import plotly.graph_objects as go
 
+from plotly.subplots import make_subplots
+
 import utilities
 
 
@@ -24,7 +26,7 @@ def fig_for_location(data, country=None, state=None, num_start=100, case_type="c
     df_plot = df_sum.loc[idx_start:].copy()
     df_plot['doubling days'] = averaged_days / np.log2(df_plot['current'] / df_plot['previous'])
     location = utilities.location_name(country=country, state=state)
-    fig = plotly.subplots.make_subplots(
+    fig = make_subplots(
         rows=3, cols=1, shared_xaxes=True,
         specs=[[{"rowspan": 2}], [None], [{}]],
         subplot_titles=[f"{case_type.title()} cases on a {yaxes_type} scale",
