@@ -1,4 +1,4 @@
-Tuesday MeetUp 057 - Beginners Python and Machine Learning - 28 Apr 2020 - Single page web apps with dash
+Tuesday MeetUp 100 - Beginners Python and Machine Learning - 23 Mar 2021 - Single page web apps with dash
 
 Learning objectives:
 - python scripts (not notebooks)
@@ -9,13 +9,13 @@ Learning objectives:
 @author D Tim Cummings
 
 Task 1: Setup environment
-- Install Python 3.8 from https://www.python.org/downloads/release/python-382/
+- Install Python 3.9 from https://www.python.org/downloads/release/python-392/
   - Add python to path when installing, or know where it is for later
   - (3.6 or later should be fine, anaconda also fine)
 - Install Git from https://git-scm.com/download/
-- Install IDE eg PyCharm Community Edition 2020.1 from https://www.jetbrains.com/pycharm/download/
+- Install IDE eg PyCharm Community Edition 2020.3.3 from https://www.jetbrains.com/pycharm/download/
 - Clone repository and setup virtual environment (see readme1.md)
-    git checkout task2  # VCS > Git > Branches... > Checkout tag or revision > task2
+- git checkout challenge2  # Git > Branches... > Checkout tag or revision > challenge2
 
 
 Task 2: First dash application
@@ -23,11 +23,12 @@ Task 2: First dash application
 - Create a simple layout with a single <h1> and a single <div> element
 - Run the application from the command line (python bpaml_dash_graph.py) or IDE (ctrl-shift-r)
 - Create a branch to commit your changes
-    git checkout -b mytask2attempt              # -b creates a branch. GUI: VCS > Git > Branches... > New Branch
-    git commit -a -m "my task 2 solution"       # -a adds all changes before commit. GUI: Click tick in GUI
+    git checkout -b mytask2attempt              # -b creates a branch. GUI: Git > Branches... > New Branch
+    git commit -a -m "my task 2 solution"       # -a adds all changes before commit. GUI: Commit tab (top left).
+    # might need to turn on new behaviour in PyCharm. GUI: File > Settings... > Version Control > Commit > Non-modal commit
 - Checkout task 3 and compare differences
-    git checkout task3                          # check out tag called task3
-    git diff task2 task3                        # show what has changed between task2 and task3. GUI: Log
+    git checkout challenge3                     # check out branch called challenge3
+    git diff challenge2 challenge3              # show what has changed between challenge2 and challenge3. GUI: Log
 
 
 Task 3: Dropdown menu for list of countries
@@ -46,9 +47,8 @@ Task 3: Dropdown menu for list of countries
 - Create a branch to commit your changes
     git checkout -b mytask3attempt
     git commit -a -m "my task 3 solution"
-- Checkout task 4 and compare differences
-    git checkout task4
-    git diff task3 task4
+- Checkout task 4
+    git checkout challenge4
 
 
 Task 4: Use callbacks on Dropdown menu to change text in div.
@@ -57,10 +57,10 @@ Task 4: Use callbacks on Dropdown menu to change text in div.
 - Create a function which takes the country name and returns "You have selected {country}"
 - Use the @app.callback decorator to call the function when "value" of "input-country" changes
   and stores result in "children" of "text-selected-country"
-- Commit your changes to your own branch and checkout task5
+- Commit your changes to your own branch and checkout challenge 5
     git checkout -b mytask4attempt
     git commit -a -m "my task 4 solution"
-    git checkout task5
+    git checkout challenge5
 
 
 Task 5: Use selected country to filter Dropdown for state
