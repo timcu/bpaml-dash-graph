@@ -76,4 +76,4 @@ Task 5: Use selected country to filter Dropdown for state
 - Commit your changes to your own branch and checkout task6
     git checkout -b mytask5attempt
     git commit -a -m "my task 5 solution"
-    git checkout task6
+    git checkout challenge6
