@@ -23,8 +23,9 @@ Task 2: First dash application
 - Create a simple layout with a single <h1> and a single <div> element
 - Run the application from the command line (python bpaml_covid_19_dash.py) or IDE (ctrl-shift-r)
 - Create a branch to commit your changes
-    git checkout -b mytask2attempt              # -b creates a branch. GUI: VCS > Git > Branches... > New Branch
-    git commit -a -m "my task 2 solution"       # -a adds all changes before commit. GUI: Click tick in GUI
+    git checkout -b mytask2attempt              # -b creates a branch. GUI: Git > Branches... > New Branch
+    git commit -a -m "my task 2 solution"       # -a adds all changes before commit. GUI: Commit tab (top left).
+    # might need to turn on new behaviour in PyCharm. GUI: File > Settings... > Version Control > Commit > Non-modal commit
 - Checkout task 3 and compare differences
     git checkout challenge3                     # check out branch called challenge3
     git diff challenge2 challenge3              # show what has changed between challenge2 and challenge3. GUI: Log
