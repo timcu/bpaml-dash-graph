@@ -44,12 +44,15 @@ app.layout = html.Div(children=[
 
         html.Div(children=[
             html.Label("Averaged days", htmlFor="input-averaged-days"),
-            dcc.Slider(
-                id="input-averaged-days",
-                min=1,
-                max=10,
-                value=5,
-                marks={str(n+1): str(n+1) for n in range(10)}
+            html.Div(children=[
+                dcc.Slider(
+                    id="input-averaged-days",
+                    min=1,
+                    max=10,
+                    value=5,
+                    marks={str(n+1): str(n+1) for n in range(10)}
+                )],
+                style={"marginBottom": "20px", 'color': 'red'}
             ),
             html.Label("Starting number", htmlFor="input-num-start"),
             dcc.Input(
@@ -65,7 +68,7 @@ app.layout = html.Div(children=[
             dcc.RadioItems(
                 id="input-case-type",
                 value="confirmed",
-                options=[{"label": s, "value": s} for s in ("confirmed", "recovered", "deaths")],
+                options=[{"label": s, "value": s} for s in ("confirmed", "recovered", "deaths", "active")],
                 labelStyle={"display": "inline-block"},
             ),
             html.Label("Graph type", htmlFor="input-yaxes-type"),
@@ -74,6 +77,15 @@ app.layout = html.Div(children=[
                 value="log",
                 options=[{"label": s, "value": s} for s in ("linear", "log")],
                 labelStyle={"display": "inline-block"},
+            ),
+            html.Label("Doubling guides", htmlFor="input-doubling-guides"),
+            dcc.Checklist(
+                id="input-doubling-guides",
+                options=[
+                    {'label': f"{days} days", 'value': days} for days in [4, 5, 6, 8, 10, 12]
+                ],
+                value=[6, 12],
+                labelStyle={'display': 'inline-block'},
             ),
         ], style={"breakInside": "avoid"}),
     ], style={"columnCount": 3}),
@@ -116,13 +128,14 @@ def update_text_selected_country(country=None, state=None):
      Input('input-num-start', 'value'),
      Input('input-case-type', 'value'),
      Input('input-averaged-days', 'value'),
-     Input('input-yaxes-type', 'value')])
-def update_graph(country, state, num_start, case_type, averaged_days, yaxes_type):
+     Input('input-yaxes-type', 'value'),
+     Input('input-doubling-guides', 'value')])
+def update_graph(country, state, num_start, case_type, averaged_days, yaxes_type, doubling_guides):
     global data
     parameters = {}
     if num_start:
         parameters['num_start'] = num_start
-    return figure_cumulative_doubling.fig_for_location(data, country, state, case_type=case_type, averaged_days=averaged_days, yaxes_type=yaxes_type, **parameters)
+    return figure_cumulative_doubling.fig_for_location(data, country, state, case_type=case_type, averaged_days=averaged_days, yaxes_type=yaxes_type, doubling_guides=doubling_guides, **parameters)
 
 
 if __name__ == '__main__':
