@@ -55,7 +55,14 @@ class DataCache:
     def series_sum_for_location(self, case_type=default_case_type, country=None, state=None):
         """returns a series of values totalled for a given df and country and/or state
         Index for returned series is a DateTimeIndex"""
-        df = self.df_for_location(case_type=case_type, state=state, country=country)
-        series = df.sum(axis="index")[4:].astype(int)
-        series.index = pd.to_datetime(series.index)
-        return series
+        if case_type == "active":
+            series = self.series_sum_for_location(case_type="confirmed", state=state, country=country)
+            df_active = pd.DataFrame(series, columns=['confirmed'])
+            df_active['confirmed-lag'] = df_active['confirmed'].shift(28, fill_value=0)
+            df_active['active'] = df_active['confirmed'] - df_active['confirmed-lag']
+            return df_active['active']
+        else:
+            df = self.df_for_location(case_type=case_type, state=state, country=country)
+            series = df.sum(axis="index")[4:].astype(int)
+            series.index = pd.to_datetime(series.index)
+            return series

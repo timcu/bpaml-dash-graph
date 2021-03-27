@@ -110,6 +110,18 @@ Task 9: Provide a callbacks for Case Type and Graph Type
 - options for yaxes-type are linear or log
 - labelStyle={"display": "inline-block"}
 - Divide input fields into 3 divs with style={"breakInside": "avoid"}, all inside one div with style={"columnCount": 3}
-- Commit your changes to your own branch and checkout master to see final solution
+- Commit your changes to your own branch and checkout challenge 10
+
+
+Task 10: Add "active" as another case type. Add checkboxes for doubling guides
+data_cache.py has been modified to accept "active" as a case type (from meetup097)
+figure_cumulative_doubling.py has been modified to accept list of days for drawing doubling guides
+https://dash.plotly.com/dash-core-components/checklist
+- add case type "active" to RadioItems "input-case-type"
+- add dash_core_components CheckList for id="input-doubling-guides"
+- options for doubling guides [{"label": str(days), "value": days}, ] for 4, 5, 6, 8, 10, 12
+- use inline-block labels
+- initial value [6, 12]
+- Commit your changes to your own branch and checkout master to see the solution
     git checkout master
 
