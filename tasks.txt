@@ -110,6 +110,4 @@ Task 9: Provide a callbacks for Case Type and Graph Type
 - options for yaxes-type are linear or log
 - labelStyle={"display": "inline-block"}
 - Divide input fields into 3 divs with style={"breakInside": "avoid"}, all inside one div with style={"columnCount": 3}
-- Commit your changes to your own branch and checkout master to see final solution
-    git checkout master
-
+- Commit your changes to your own branch and checkout challenge 10
