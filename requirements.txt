@@ -1,4 +1,4 @@
 dash
 pandas
 numpy
-plotly
+plotly==4.7.1

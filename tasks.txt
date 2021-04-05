@@ -114,7 +114,7 @@ Task 9: Provide a callbacks for Case Type and Graph Type
 
 
 Task 10: Add "active" as another case type. Add checkboxes for doubling guides
-data_cache.py has been modified to accept "active" as a case type (from meetup097)
+data_cache.py has been modified to accept "active" as a case type (from meetup096)
 figure_cumulative_doubling.py has been modified to accept list of days for drawing doubling guides
 https://dash.plotly.com/dash-core-components/checklist
 - add case type "active" to RadioItems "input-case-type"
